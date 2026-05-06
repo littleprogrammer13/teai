@@ -5,6 +5,6 @@ USER user
 ENV PATH="/home/user/.local/bin:$PATH"
 WORKDIR /app
 COPY --chown=user . /app
-RUN pip install --no-cache-dir -r requirements.txt
-# Comando para rodar a API do Teai
+RUN pip install --no-cache-dir torch diffusers transformers accelerate flask xformers pillow
+EXPOSE 7860
 CMD ["python3", "app.py"]
